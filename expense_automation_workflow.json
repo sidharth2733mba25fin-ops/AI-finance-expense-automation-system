@@ -1,0 +1,153 @@
+{
+  "name": "My workflow 2",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "1f2iS4W9mE8_1rczIfB_0mvMWqN26ek9GOmqB1usUyWk",
+          "mode": "list",
+          "cachedResultName": "expense tracker data",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1f2iS4W9mE8_1rczIfB_0mvMWqN26ek9GOmqB1usUyWk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1631708484,
+          "mode": "list",
+          "cachedResultName": "Form Responses 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1f2iS4W9mE8_1rczIfB_0mvMWqN26ek9GOmqB1usUyWk/edit#gid=1631708484"
+        },
+        "event": "rowAdded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "8fcbd646-95dc-4faf-8657-16d2b57de85c",
+      "name": "Google Sheets Trigger",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "APLNDVnysPgp2JTc",
+          "name": "Google Sheets Trigger OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9e50f4d6-80b5-4a79-b8c0-fb5262d3cde5",
+              "name": "employee name",
+              "value": "={{ $json['Employee Name'] }}",
+              "type": "string"
+            },
+            {
+              "id": "57f4bbb7-dea8-4621-b33e-5c4e0c07c20f",
+              "name": "Department",
+              "value": "={{ $json['Department '] }}",
+              "type": "string"
+            },
+            {
+              "id": "eb870256-3845-46ca-a5f3-62f605bca449",
+              "name": "Amount",
+              "value": "={{ $json['Amount '] }}",
+              "type": "number"
+            },
+            {
+              "id": "b76457ba-68ba-4eb9-af93-5689662cd705",
+              "name": "=Category",
+              "value": "={{ $json['Category '] }}",
+              "type": "string"
+            },
+            {
+              "id": "dc34a582-fa24-40a3-958b-96122becc53d",
+              "name": "date",
+              "value": "={{ $json['Expense Date'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "99a3b17f-97be-48bf-9932-8d110d35bc19",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "sendTo": "sidharthchhabra2003@gmail.com",
+        "subject": "new expense submitted",
+        "message": "=<p>A new expense has been submitted. \n<p>\nEmployee: {{ $json['employee name']}}<br>\nDepartment:{{ $json.Department}}<br>\nExpense Date:{{ $json.date}} <br>\nCategory: {{$json.Category}}<br> \nAmount: ₹{{$json.Amount}} \n<p>\nRegards, Expense Automation System\n<p>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        416,
+        0
+      ],
+      "id": "066604e0-ebb0-47f9-9c37-b4d42aa3b112",
+      "name": "Send a message",
+      "webhookId": "f38c3393-1690-48f9-8072-c97e85e6c38a",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "v6z1b8i7IQEQRr9s",
+          "name": "Gmail OAuth2 API"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Google Sheets Trigger": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "79ab9bc1-a18e-4b8a-8590-69e693b29400",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "a2bcffa66120db14dd323957ce19e00080af1273838ed4b11b84b2a5b5369973"
+  },
+  "id": "40i5WcqyZXDEXFhG",
+  "tags": []
+}
