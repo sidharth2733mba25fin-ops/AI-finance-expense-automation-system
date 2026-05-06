@@ -80,29 +80,28 @@ Finance-Automation-Project/
 
 ### 1. Google Form Interface
 
-![Google Form]("C:\Users\Sidharth chhabra\OneDrive\Desktop\ai in financce\google_form.png"
+![Google Form](https://github.com/sidharth2733mba25fin-ops/AI-finance-expense-automation-system/blob/main/google_form.png
 )
 
 ---
 
 ### 2. Google Sheet Data Capture
 
-![Google Sheet]("C:\Users\Sidharth chhabra\OneDrive\Desktop\ai in financce\google_sheet.png"
+![Google Sheet](https://github.com/sidharth2733mba25fin-ops/AI-finance-expense-automation-system/blob/main/google_sheet.png
 )
 
 ---
 
 ### 3. n8n Workflow Architecture
 
-![n8n Workflow]("C:\Users\Sidharth chhabra\OneDrive\Desktop\ai in financce\n8n_architecture.png"
+![n8n Workflow](https://github.com/sidharth2733mba25fin-ops/AI-finance-expense-automation-system/blob/main/n8n_architecture.png
 )
 
 ---
 
 ### 4. Email Notification Output
 
-![Email Notification]("C:\Users\Sidharth chhabra\OneDrive\Desktop\ai in financce\email_output.png"
-)
+![Email Notification](https://github.com/sidharth2733mba25fin-ops/AI-finance-expense-automation-system/blob/main/email_output.png)
 
 ---
 
@@ -163,7 +162,7 @@ This project shows how automation and AI-driven workflows can transform traditio
 
 ## 👩‍💼 Author
 
-**Sidharth Chhbra**
+**Sidharth Chhabra**
 MBA Finance Student | AI in Finance Practitioner
 
 ---
